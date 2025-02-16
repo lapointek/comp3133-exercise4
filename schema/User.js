@@ -25,33 +25,33 @@ const userSchema = new Schema({
             },
             message: "Invalid city name. Can only contain spaces and letters.",
         },
-        website: {
-            type: String,
-            required: true,
-            validate: {
-                validator: validator.isURL,
-                message: "Invalid website url",
-            },
+    },
+    website: {
+        type: String,
+        required: true,
+        validate: {
+            validator: validator.isURL,
+            message: "Invalid website url",
         },
-        zipcode: {
-            type: String,
-            required: true,
-            validate: {
-                validator: function (value) {
-                    return /^\d{5}-\d{4}$/.test(value); // 5-4
-                },
-                message: "Invalid zip code format.",
+    },
+    zipcode: {
+        type: String,
+        required: true,
+        validate: {
+            validator: function (value) {
+                return /^\d{5}-\d{4}$/.test(value); // 5-4
             },
+            message: "Invalid zip code format.",
         },
-        phone: {
-            type: String,
-            required: true,
-            validate: {
-                validator: function (value) {
-                    return /^\d-\d{3}-\d{3}-\d{4}$/.test(value); // 1-3-3-4
-                },
-                message: "Invalid phone number format",
+    },
+    phone: {
+        type: String,
+        required: true,
+        validate: {
+            validator: function (value) {
+                return /^\d-\d{3}-\d{3}-\d{4}$/.test(value); // 1-3-3-4
             },
+            message: "Invalid phone number format",
         },
     },
 });
