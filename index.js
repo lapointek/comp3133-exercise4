@@ -18,6 +18,7 @@ mongoose
     .then(() => console.log("Connected to MongoDB"))
     .catch((err) => console.error("Error connecting to mongoDB: ", err));
 
+// Add user
 app.post("/users", async (req, res) => {
     try {
         const newUser = new User(req.body);
@@ -26,10 +27,6 @@ app.post("/users", async (req, res) => {
     } catch {
         res.status(400).json({ message: err.message });
     }
-});
-
-app.get("/", (req, res) => {
-    res.send("Home");
 });
 
 app.listen(port, () => {
