@@ -12,7 +12,7 @@ const userSchema = new Schema({
         type: String,
         required: true,
         validate: {
-            validator: validate.isEmail,
+            validator: validator.isEmail,
             message: "Invalid email format",
         },
     },
